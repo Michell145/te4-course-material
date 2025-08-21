@@ -1,2 +1,3 @@
-const micho = "hello world";
-console.log(micho);
+const punani = "hello world";
+console.log(punani);
+
