@@ -1,3 +1,2 @@
-const punani = "hello world";
-console.log(punani);
-
+const Bomb = "hello world";
+console.log(Bomb);
