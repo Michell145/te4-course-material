@@ -98,6 +98,93 @@
       </table>
     </section>
 
+    <section id="form">
+      <form>
+        <fieldset>
+          <legend>Project details</legend>
+          <label for="project">Choose Project</label>
+          <select name="project" id="project" required>
+            <option value="portfolio">Website</option>
+            <option value="car-website">Web app</option>
+            <option value="art-gallery" disabled="select">Bug fixes</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label>
+            <input type="checkbox" name="languages" value="html" /> HTML
+          </label>
+          <label>
+            <input type="checkbox" name="languages" value="css" /> CSS
+          </label>
+          <label>
+            <input type="checkbox" name="languages" value="javascript" />
+            JavaScript
+          </label>
+          <label>
+            <input type="checkbox" name="languages" value="React" /> React
+          </label>
+          <label>
+            <input type="checkbox" name="languages" value="node.js" /> Node.Js
+          </label>
+          <br /><br />
+          <label for="comments">Details:</label><br />
+          <textarea
+            id="projectDesc"
+            name="projectDesc"
+            rows="5"
+            cols="40"
+            placeholder="Provide details about your project..."
+            required
+          ></textarea>
+          <br /><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Budget and Timeline</legend>
+          <label for="Budget">Project Budget</label>
+          <input
+            type="number"
+            name="Budget"
+            id="Budget"
+            placeholder="Enter your Budget"
+            required
+          />
+          <span>Urgency:</span><br />
+          <label>
+            <input type="radio" name="urgency" value="asap" required />
+            ASAP </label
+          ><br />
+          <label>
+            <input type="radio" name="urgency" value="2weeks" /> Within 2 weeks </label
+          ><br />
+          <label>
+            <input type="radio" name="urgency" value="flexible" /> Flexible
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Contact me</legend>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            required
+          /><br /><br />
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your email"
+            required
+          /><br /><br />
+          <input type="company" name="company" placeholder="Your company" />
+          <input type="submit" value="Submit" />  
+        </fieldset>
+      </form>
+    </section>
+
     <footer>
       ©Michell issa
       <a href="https://github.com/Michell145?tab=repositories" target="_blank">
