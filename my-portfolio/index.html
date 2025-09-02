@@ -21,10 +21,12 @@
     <p>This is my portfolio - still in progress</p>
 
     <header>
+      <button id="nav-toggle" aria-label="Toggle navigation">&#9776</button>
       <nav>
-        <ul>
+        <ul id="nav-links">
           <li><a href="#About">About me </a></li>
           <li><a href="#Projects">Projects </a></li>
+          <li><a href="#Hire me">Hire me</a></li>
         </ul>
       </nav>
     </header>
@@ -39,9 +41,18 @@
       </section>
       <section id="Projects">
         <h2>Projects</h2>
-        <p>Portfolio</p>
-        <p>Car website</p>
-        <p>art gallery</p>
+        <figure class="Project-item">
+          <img src="./assets/car.png" alt="Screenshot of car website">
+          <figcaption>Car Website</figcaption>
+        </figure>
+        <figure class="Project-item">
+          <img src="./assets/bomb.png" alt="Screenshot of art gallery">
+          <figcaption>Art Gallery</figcaption>
+        </figure>
+        <figure class="Project-item first">
+          <img src="./assets/lager.png" alt="Screenshot of website">
+          <figcaption>Lager system</figcaption>
+        </figure>
       </section>
     </main>
     <img
@@ -51,7 +62,7 @@
       height="300px"
     />
 
-    <section>
+    <section id="Hobbies">
       <h2>My Hobbies</h2>
       <ul>
         <li>Football</li>
@@ -69,7 +80,9 @@
         <li>Wok</li>
       </ol>
     </section>
+   <div class="card">
     <dl>
+      <h2>Languages</h2>
       <dt>Html</dt>
       <dd>HTML is a web languages.</dd>
 
@@ -79,6 +92,9 @@
       <dt>Javascript</dt>
       <dd>Javascript is a programming languages used mostly for website</dd>
     </dl>
+    </div>
+    
+    
 
     <section>
       <h2>Tables</h2>
@@ -91,14 +107,14 @@
           </tr>
         </thead>
         <thead>
-          <td>html, css, javascript, c#</td>
+          <td>HTML , CSS, JavaScript, C#</td>
           <td>4 months</td>
           <td>pro</td>
         </thead>
       </table>
     </section>
 
-    <section id="form">
+    <section id="Hire me">
       <form>
         <fieldset>
           <legend>Project details</legend>
@@ -180,10 +196,23 @@
             required
           /><br /><br />
           <input type="company" name="company" placeholder="Your company" />
-          <input type="submit" value="Submit" />  
+          <input type="submit" value="Submit" />
         </fieldset>
       </form>
     </section>
+
+    <section id="Background">
+  <h2>My favorite video</h2>
+  <video width="640" height="640" controls poster="./assets/Micho.JPG">
+    <source src="./assets/video/Loui.mp4" type="video/mp4">
+    <source src="./assets/video/Loui.webm" type="video/webm">
+    Your browser does not support the video tag. 
+    <button>
+    <a href="./assets/video/Loui.mp4">Download the video</a>
+    </button>
+  </video>
+</section>
+
 
     <footer>
       ©Michell issa
