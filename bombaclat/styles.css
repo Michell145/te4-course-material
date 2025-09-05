@@ -1,0 +1,42 @@
+
+#main-title {
+    color: green;
+    text-align: center;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+p {
+   font-size: 18px;
+}
+
+
+.animals > li {
+  list-style-type: circle ;
+  padding: 10px;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+h1 + p {
+  font-style: italic;
+}
+
+li:nth-child(even){
+  background-color: lightgray;
+}
+
+
+
+footer p {
+  border: 2px soldi red;
+}
+
+.animals h2:first-of-type + ul li::before {
+  content: "🐒 ";
+}

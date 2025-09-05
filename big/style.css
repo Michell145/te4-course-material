@@ -1,0 +1,60 @@
+:root {
+  --bg: #0d1117;        
+  --text: #c9d1d9;      
+  --primary: #58a6ff;    
+  --accent: #f85149;    
+
+
+  --spacing-small: 1rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 3rem;
+
+
+  --heading-size: 3rem;
+  --border-radius: 6px;
+  --transition-speed: 250ms;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--bg), #161b22);
+    padding: var(--spacing-large);
+    color: var(--text);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: var(--heading-size);
+    margin-bottom: var(--spacing-medium);
+}
+
+.hero p {
+    max-width: 60ch;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.btn {
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--text);
+    text-decoration: none;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: var(--spacing-medium);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover, .btn:focus {
+   background-color: var(--accent);
+   border-color: var(--accent);
+   color: #fff;
+   outline: none;
+}
