@@ -1,0 +1,60 @@
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar main right-sidebar"
+    "footer footer footer";
+  grid-template-columns: 200px 1fr 200px;
+  height: 100vh;
+}
+
+.header {
+  grid-area: header; 
+  background: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #0056b3;
+}
+
+.sidebar {
+  grid-area: sidebar; background: lightgreen;
+}
+
+.main {
+  grid-area: main; background: lightcoral;
+}
+
+.footer {
+  grid-area: footer; background: lightgray;
+}
+
+.ad {
+  grid-area: right-sidebar;
+  background: lightyellow;
+}
