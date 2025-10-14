@@ -9,7 +9,7 @@ let introduction =
   "my name is " +
   typeof Micho +
   ", I am " +
-   age +
+  age +
   " years old, and it is " +
   typeof teacher +
   " that I am a teacher.";

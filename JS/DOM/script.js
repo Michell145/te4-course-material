@@ -75,21 +75,24 @@ box.addEventListener("mouseout", () => {
 });
 
 const log = document.getElementById("log");
+const butt = document.getElementById("butt");
 // exercise 2
-input = document
-  .getElementById("input")
-  .addEventListener("keydown", (event) => {
-    log.textContent = `${event.key} key pressed`;
-    const length = event.target.value.length;
-    console.log(length);
-  });
+const input = document.getElementById("input");
 
-input = document.getElementById("input").addEventListener("keyup", (event) => {
+input.addEventListener("keydown", (event) => {
+  log.textContent = `${event.key} key pressed`;
+  const length = event.target.value.length;
+  console.log(length);
+});
+
+input.addEventListener("keyup", (event) => {
   log.textContent = `key released: ${event.key}`;
 });
 
-input = document.getElementById("input").addEventListener("input", (event) => {
-  butt.textContent = `Micho is the best developer ever!`;
+input.addEventListener("input", (event) => {
+  if (butt) {
+    butt.textContent = `Micho is the best developer ever!`;
+  }
 });
 
 // Exercise 1

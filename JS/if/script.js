@@ -39,12 +39,13 @@ for (let number = 10; number >= 1; number--) {
   console.log(number);
 }
 
-let sum = null;
+let sum = 0;
 let n = 1;
 
 do {
-  sum = sum + number;
+  sum = sum + n;
   console.log(`the sum is ${sum}`);
+  n++;
 } while (sum <= 20);
 
 const classmates = ["Micho", "Manhal", "Lucas", "Erkan", "nirari", "Frank"];

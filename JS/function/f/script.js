@@ -46,28 +46,30 @@ function calculateArea(width, height = 10) {
 console.log(calculateArea(5, 20));
 console.log(calculateArea(5));
 
-const clalculateAge = (birthYear, currentYear = 2025) => {
+const calculateAge = (birthYear, currentYear = 2025) => {
   const age = currentYear - birthYear;
   console.log(age);
 };
 
-clalculateAge(2006);
+calculateAge(2006);
 
 const showTemp = (Temp = 10) => {
   if (Temp < 0) return `freezing`;
-  if (Temp < 20 && Temp < 32) return `warm`;
+  if (Temp >= 0 && Temp < 20) return `cold`;
+  if (Temp >= 20 && Temp < 32) return `warm`;
   if (Temp > 40) return `boiled`;
+  return `hot`;
 };
 
 console.log(showTemp(20));
 
 const calculateGrade = (name, score = 100) => {
+  if (score < 0 || score > 100) return `invalid number`;
   if (score >= 90 && score <= 100) return `A`;
   if (score >= 80 && score <= 89) return `B`;
   if (score >= 70 && score <= 79) return `C`;
   if (score >= 60 && score <= 69) return `D`;
   if (score >= 50 && score <= 59) return `F`;
-  if (score <= 49 && score <= 0) return `invalid number`;
-  if (score > 100) return `invalid number`;
+  return `F`;
 };
 console.log(calculateGrade("Micho", -10));

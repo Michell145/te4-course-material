@@ -1,0 +1,57 @@
+{
+  "// 🌙 Quick Dark Theme Configurations": "Copy any of these into your settings.json",
+  
+  "tokyo_night": {
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorCustomizations": {
+      "editor.background": "#1a1b26",
+      "sideBar.background": "#16161e",
+      "activityBar.background": "#16161e"
+    }
+  },
+  
+  "dracula": {
+    "workbench.colorTheme": "Dracula",
+    "workbench.colorCustomizations": {
+      "editor.background": "#282a36",
+      "sideBar.background": "#21222c",
+      "activityBar.background": "#21222c"
+    }
+  },
+  
+  "night_owl": {
+    "workbench.colorTheme": "Night Owl",
+    "workbench.colorCustomizations": {
+      "editor.background": "#011627",
+      "sideBar.background": "#010e1a",
+      "activityBar.background": "#010e1a"
+    }
+  },
+  
+  "material_palenight": {
+    "workbench.colorTheme": "Material Theme Palenight",
+    "workbench.colorCustomizations": {
+      "editor.background": "#292d3e",
+      "sideBar.background": "#242837",
+      "activityBar.background": "#242837"
+    }
+  },
+  
+  "cobalt2": {
+    "workbench.colorTheme": "Cobalt2",
+    "workbench.colorCustomizations": {
+      "editor.background": "#122738",
+      "sideBar.background": "#0e1e2e",
+      "activityBar.background": "#0e1e2e"
+    }
+  },
+  
+  "github_dark": {
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.colorCustomizations": {
+      "editor.background": "#0d1117",
+      "sideBar.background": "#161b22",
+      "activityBar.background": "#161b22"
+    }
+  }
+}
