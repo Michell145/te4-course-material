@@ -78,5 +78,6 @@
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": true,
   "editor.minimap.scale": 2,
-  "workbench.statusBar.visible": true
+  "workbench.statusBar.visible": true,
+  "liveServer.settings.port": 5501
 }
