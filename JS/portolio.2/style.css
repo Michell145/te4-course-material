@@ -1,6 +1,3 @@
-/* =========================================
-   Design Tokens (Dark = default)
-========================================= */
 :root {
   --primary-color: #00d4ff;
   --secondary-color: #0077cc;
@@ -19,17 +16,41 @@
   --glow: 0 0 12px rgba(0, 212, 255, 0.7);
   --focus: 0 0 0 3px rgba(0, 212, 255, 0.35);
   --transition: 0.45s cubic-bezier(0.65, 0.05, 0.36, 1);
-
   --panel: #142132;
   --accent: #00b9ff;
   --radius: 14px;
   --speed: 0.3s;
-
   --text: var(--text-color);
   --bg: var(--background-color);
 }
+body.light-mode {
+  --background-color: #f5f7fa;
+  --text-color: #1c2734;
+  --panel: #ffffff;
+  --accent: #0077cc;
+  --background-gradient: linear-gradient(135deg, #ffffff, #e8eef5 40%, #ffffff);
+}
 
-/* Light Mode Overrides */
+:root {
+  --accent: #00b9ff;
+  --primary-color: #00d4ff;
+}
+
+body.purple-theme {
+  --accent: #b266ff;
+  --primary-color: #9b4dff;
+}
+
+body.green-theme {
+  --accent: #00ff99;
+  --primary-color: #00d478;
+}
+
+body.red-theme {
+  --accent: #ff4d4d;
+  --primary-color: #ff6666;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #f5f7fa;
@@ -47,56 +68,42 @@
     --accent: #0077cc;
   }
 
-  body {
-    color-scheme: light;
-  }
-
   header {
     background: rgba(255, 255, 255, 0.85);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(8px);
   }
-
   nav {
     background: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
-
   thead {
     background: #e5edf4;
   }
-
   input,
   textarea {
     background: #f0f4f8;
     border: 1px solid #c7d3dd;
     color: var(--text-color);
   }
-
   .Project-item {
     border: 1px solid #d8e2eb;
   }
 }
 
-/* =========================================
-   Base / Reset
-========================================= */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 html {
   scroll-behavior: smooth;
 }
-*,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
 }
-
-/* =========================================
-   Body & Typography
-========================================= */
 body {
   font-family: system-ui, -apple-system, Arial, sans-serif;
   background: var(--background-gradient);
@@ -106,9 +113,6 @@ body {
   color-scheme: dark;
 }
 
-/* =========================================
-   Header / Nav
-========================================= */
 header {
   position: sticky;
   top: 0;
@@ -116,23 +120,48 @@ header {
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 60px;
   padding: 0 0.9rem;
   z-index: 100;
   border-bottom: 1px solid #1e3147;
 }
-
-header > nav {
-  height: 100%;
+header nav {
   display: flex;
   align-items: center;
   margin-left: auto;
+}
+
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 20px;
+}
+#theme-switch img:first-child {
+  display: none;
+}
+
+.light #theme-switch img:last-child {
+  display: none;
+}
+#theme-switch img:last-child {
+  display: block;
+}
+#theme-switch img {
+  fill: var(--primary-color);
 }
 .nav-links {
   list-style: none;
   display: flex;
   gap: clamp(1.2rem, 2.4vw, 3rem);
-  margin-left: 0;
+  margin: 0;
   padding: 0;
 }
 .nav-links a {
@@ -148,7 +177,7 @@ header > nav {
   text-shadow: 0 0 6px rgba(0, 212, 255, 0);
 }
 .nav-links a::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -172,71 +201,77 @@ header > nav {
   border-radius: 4px;
 }
 
-/* =========================================
-   Hero / About
-========================================= */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
 .hero {
   padding: 5.5rem 1.1rem 2.5rem;
+  text-align: center;
 }
 .hero h1 {
   font-size: clamp(1.9rem, 6vw, 2.6rem);
-  margin: 0 0 0.75rem;
+  margin-bottom: 0.75rem;
   line-height: 1.15;
-  text-align: center;
 }
 .hero p {
   font-size: clamp(1rem, 2.5vw, 1.15rem);
   max-width: 32ch;
-  text-align: center;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   color: var(--text-color);
   text-shadow: var(--glow);
 }
+#cursor {
+  display: inline-block;
+  color: var(--accent);
+  animation: blink 0.8s infinite;
+}
 
-.Michell {
-  font-weight: 700;
-  color: var(--text-color);
-  text-shadow: var(--glow);
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 #About {
   padding: 2.2rem 1.1rem;
   background: var(--background-color);
   border-radius: var(--radius);
-  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
-
 .para {
   font-size: 2rem;
   color: var(--text-color);
-  font-family: italic;
+  font-style: italic;
   gap: 1rem;
 }
-
 .para-micho {
   font-size: 2rem;
   color: var(--text-color);
   font-weight: bold;
   text-shadow: var(--glow);
-  font-family: italic;
+  font-style: italic;
 }
 
-/* =========================================
-   Sections / Headings
-========================================= */
 main section,
 .card {
   padding: 2.2rem 1.1rem;
 }
 h2 {
   font-size: clamp(1.35rem, 4.5vw, 1.9rem);
-  margin: 0 0 1rem;
+  margin-bottom: 1rem;
   position: relative;
 }
 h2::after {
-  content: "";
+  content: '';
   display: block;
   width: 60px;
   height: 3px;
@@ -245,16 +280,12 @@ h2::after {
   margin-top: 0.4rem;
 }
 
-/* =========================================
-   Projects / menu / navbar
-========================================= */
 #Projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
-
 #Projects h2 {
   flex-basis: 100%;
   text-align: center;
@@ -263,13 +294,10 @@ h2::after {
   text-shadow: var(--glow);
   height: 10vh;
 }
-
 #Projects h2::after {
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: 240px;
 }
-
 .Project-item {
   width: 600px;
   background-color: var(--background-color);
@@ -285,15 +313,10 @@ h2::after {
   color: var(--accent);
 }
 .Project-item p {
-  color: var(--text-color);
   font-size: 16px;
+  color: var(--text-color);
   line-height: 1.3;
   height: 4vh;
-}
-.Project-item:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: var(--glow);
 }
 .Project-item img {
   border-radius: 10px;
@@ -301,60 +324,40 @@ h2::after {
   aspect-ratio: 16/9;
   object-fit: cover;
 }
-
-.menu {
-  background-color: var(--background-color);
-  color: #fff;
-  padding: 8px 10px;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  color: var(--text-color);
-  text-decoration: none;
+.Project-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
 }
 
-.menu:hover {
-  background-color: var(--accent);
-}
-
-/* =========================================
-   Cards
-========================================= */
 .card {
   padding: 2.2rem 1.1rem;
   background: var(--background-color);
   border: 1px solid #1f3147;
   border-radius: var(--radius);
   box-shadow: var(--glow);
-  justify-items: center;
   margin-top: 25px;
+  max-width: 700px;
 }
-
 .card h2 {
-  flex-basis: 100%;
   text-align: center;
   font-size: 3rem;
   color: var(--accent);
   text-shadow: var(--glow);
   height: 10vh;
 }
-
 .card h2::after {
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: 240px;
 }
-
 .card dl {
   margin-top: 2rem;
   display: grid;
   gap: 1.8rem;
   text-align: left;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
-
 .card dt {
   font-size: 1.4rem;
   font-weight: bold;
@@ -363,24 +366,20 @@ h2::after {
   margin-bottom: 0.3rem;
   position: relative;
 }
-
 .card dt::before {
-  content: "▹";
+  content: '▹';
   margin-right: 0.5rem;
   color: var(--accent);
   text-shadow: 0 0 6px var(--accent);
 }
-
 .card dd {
   margin: 0 0 0 1.8rem;
   font-size: 1.05rem;
   color: var(--text-color);
   opacity: 0.9;
   line-height: 1.5;
-  text-shadow: none;
   transition: color 0.3s, transform 0.3s;
 }
-
 .card dt:hover,
 .card dd:hover {
   color: var(--accent);
@@ -394,7 +393,6 @@ h2::after {
   height: 50vh;
   gap: 20rem;
 }
-
 .tilt-box-wrap {
   width: 400px;
   height: 400px;
@@ -406,7 +404,6 @@ h2::after {
   transform: scale(1.1);
   box-shadow: var(--glow);
 }
-
 .tilt-box {
   width: 100%;
   height: 100%;
@@ -427,15 +424,12 @@ h2::after {
 .tilt-box img {
   transform: translateZ(40px);
 }
-
 .t_over {
   width: 33.333%;
   height: 33.333%;
   position: absolute;
   z-index: 1;
-}
-
-/* tilt-box hover zones */
+} /* tilt-box hover zones */
 .t_over:nth-child(1) {
   top: 0;
   left: 0;
@@ -472,7 +466,6 @@ h2::after {
   top: 66.666%;
   left: 66.666%;
 }
-
 .t_over:nth-child(1):hover ~ .tilt-box {
   transform: rotateX(-20deg) rotateY(20deg);
 }
@@ -501,9 +494,6 @@ h2::after {
   transform: rotateX(20deg) rotateY(-20deg);
 }
 
-/* =========================================
-   Table / Hobbies
-========================================= */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -514,7 +504,7 @@ thead {
 }
 th,
 td {
-  padding: 0.55rem 0.6rem;
+  padding: 0.75rem 1rem;
   border-bottom: 1px solid #1f3249;
   text-align: left;
   background: var(--background-color);
@@ -522,15 +512,15 @@ td {
 
 #Hobbies {
   padding: 2.2rem 1.1rem;
+  box-shadow: var(--glow);
   background: var(--background-color);
-  justify-items: center;
-  height: auto;
-  margin-bottom: 25px;
+  max-width: 600px;
+  margin: -550px auto 25px auto;
+  border-radius: var(--radius);
+  float: right;
+  overflow: hidden;
 }
 
-/* =========================================
-   Forms
-========================================= */
 form fieldset {
   border: 1px solid #1f3148;
   padding: 1rem;
@@ -560,9 +550,6 @@ textarea:focus {
   outline-offset: 2px;
 }
 
-/* =========================================
-   Buttons
-========================================= */
 button,
 .btn {
   background: var(--accent);
@@ -585,9 +572,6 @@ button:active,
   transform: translateY(0);
 }
 
-/* =========================================
-   Footer
-========================================= */
 footer {
   text-align: center;
   padding: 2rem 1rem 3rem;
@@ -595,17 +579,11 @@ footer {
   opacity: 0.75;
 }
 
-/* =========================================
-   Responsive Fixes
-========================================= */
-
-/* Tablet (≤ 1024px) */
 @media (max-width: 1024px) {
   header {
     justify-content: space-between;
     padding: 0 1rem;
   }
-
   .hero {
     padding: 4rem 1rem 2rem;
     text-align: center;
@@ -615,51 +593,47 @@ footer {
   }
   .hero p {
     font-size: 1rem;
-    margin: 0 auto;
   }
-
-  .projects {
+  #Projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
-
   .Project-item {
     width: 100%;
     margin: 0;
   }
-
   .container {
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
     height: auto;
   }
-
-  .tilt-box-wrap {
-    width: 90%;
-    max-width: 350px;
-    height: auto;
+  #Hobbies {
+    float: none;
+    margin: 2rem auto;
+    max-width: 90%;
   }
 }
 
-/* Mobile (≤ 600px) */
 @media (max-width: 600px) {
   header {
     flex-wrap: wrap;
     height: auto;
     padding: 0.5rem;
   }
-
-  .btn-menu {
-    width: 100%;
-    text-align: left;
-    padding: 0.8rem 1rem;
-  }
-
   .nav-links {
     display: none;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
   }
-
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
   .hero h1 {
     font-size: 1.6rem;
   }
@@ -667,51 +641,80 @@ footer {
     font-size: 0.95rem;
     max-width: 100%;
   }
-
-  .projects {
+  #Projects {
     grid-template-columns: 1fr;
   }
-
-  .Project-item {
-    margin-bottom: 1rem;
+  .tilt-box-wrap {
+    width: 90%;
+    max-width: 350px;
   }
-
-  /* Mobile table stacking */
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-    width: 100%;
-  }
-  thead {
-    display: none;
-  }
-  td {
-    padding-left: 50%;
-    position: relative;
-  }
-  td::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 45%;
-    padding: 0.5rem;
-    font-weight: bold;
-    white-space: nowrap;
-    color: var(--accent);
-    content: attr(data-label);
+  #Hobbies {
+    float: none;
+    margin: 1.5rem auto;
+    width: 95%;
   }
 }
+body.dark-mode {
+  background-color: #0b1622;
+  color: #f1f1f1;
+}
 
-/* Tiny screens (≤ 360px) */
-@media (max-width: 360px) {
-  .hero h1 {
-    font-size: 1.7rem;
-  }
-  #nav-links a {
-    font-size: 0.85rem;
-  }
+body.dark-mode a {
+  color: #00bfff;
+}
+
+body.dark-mode header {
+  background-color: #142132;
+}
+
+body.dark-mode .Project-item,
+body.dark-mode .card,
+body.dark-mode table,
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #142132;
+  color: #f1f1f1;
+}
+
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent);
+  color: #03131d;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--accent);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 1000;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  transform: translateY(-4px);
+  background: #11c6ff;
 }
