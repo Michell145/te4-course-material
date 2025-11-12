@@ -1,0 +1,10 @@
+"use strict";
+console.log("Script module loaded successfully.");
+console.log("This is a TypeScript starter template.");
+let personage = 28;
+let price = 49.99;
+let hexavalue = 0xff00ff;
+let itemquantity = 1000;
+let totalecoast = itemquantity * price;
+console.log(`Total cost for ${itemquantity} items is $${totalecoast}.`);
+console.log(`Hexadecimal value: ${hexavalue}`);
